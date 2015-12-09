@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ScrollView"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    tools:context=".MainActivity">
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <Button
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:id="@+id/btnCreateDumy" android:text="@string/work_in"
+        android:textSize="52sp"
+        android:background="@color/colorAccent">
+    </Button>
+
+    <Button
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:id="@+id/btnCreateDumy02" android:text="@string/work_out"
+        android:layout_margin="16pt">
+    </Button>
+
+    <Button
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="結果一覧rowQuery()" android:id="@+id/buttonRowQuery"
+        android:layout_gravity="center_horizontal">
+    </Button>
+
+    <Button
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="指定データ表示query()" android:id="@+id/buttonQuery"
+        android:layout_gravity="center_horizontal">
+    </Button>
+
+    <TextView
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:id="@+id/labelList"
+        android:autoText="false"
+        android:textSize="24sp"
+        android:textColor="#000000">
+    </TextView>
+
+</LinearLayout>
+</ScrollView>

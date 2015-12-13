@@ -18,15 +18,7 @@ public class ViewActivity extends AppCompatActivity {
         super.onCreate(saveInstanceState);
 
         setContentView(R.layout.activity_view);
-
-        ListView listView = (ListView)findViewById(R.id.lv);
-
-        /*
-        LinearLayout ll = new LinearLayout(this);
-        ll.setOrientation(LinearLayout.HORIZONTAL);
-        setContentView(ll);
-        ListView lv = new ListView(this);
-        */
+        ListView listView = (ListView)findViewById(R.id.lv); //view.xmlから呼び出し
 
         //SQLの検索
         StringBuilder sql = new StringBuilder();
@@ -48,7 +40,7 @@ public class ViewActivity extends AppCompatActivity {
         SQLiteDatabase db = dbh.getReadableDatabase();
 
         try {
-            Cursor cr = db.rawQuery(sql.toString(), new String[]{"12"});
+            Cursor cr = db.rawQuery(sql.toString(), new String[]{"12"}); //指定検索値の指定
 
             while (cr.moveToNext()) {
                 //DB文字列の連結
@@ -64,13 +56,10 @@ public class ViewActivity extends AppCompatActivity {
                 ad.add(str);
             }
 
-
-
         }finally {
             db.close();
         }
         listView.setAdapter(ad);
-        //ll.addView(lv);
 
     }
 

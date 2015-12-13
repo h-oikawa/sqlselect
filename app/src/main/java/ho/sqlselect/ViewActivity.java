@@ -33,7 +33,7 @@ public class ViewActivity extends AppCompatActivity {
         sql.append(" WHERE Month = ?;");
 
         //Adapterの作成
-        ArrayAdapter<String> ad = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
+        ArrayAdapter<String> ad = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_activated_1);
 
         //rawQueryメソッドでデータを取得
         DatabaseHelper dbh = new DatabaseHelper(this);
@@ -46,9 +46,9 @@ public class ViewActivity extends AppCompatActivity {
                 //DB文字列の連結
                 StringBuilder text = new StringBuilder();
                 text.append(cr.getInt(0));
-                text.append("  " + cr.getString(1));
-                text.append("/" + cr.getString(2));
-                text.append("/" + cr.getString(3));
+                text.append("  " + cr.getString(1)); //NoとYearの間
+                text.append("/" + cr.getString(2)); //YearとMonthの間
+                text.append("/" + cr.getString(3)); //MonthとDayの間
                 text.append("  " + cr.getString(4)); //dayとtimeの間
                 text.append("---" + cr.getString(5)); //timeとworkの間
 

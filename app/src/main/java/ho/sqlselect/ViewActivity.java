@@ -34,7 +34,8 @@ public class ViewActivity extends AppCompatActivity {
         sql.append(" ,Day");
         sql.append(" ,Time");
         sql.append(" ,Work");
-        sql.append(" FROM MyTable;");
+        sql.append(" FROM MyTable");
+        sql.append(" WHERE Month = ?;");
 
         //Adapterの作成
         ArrayAdapter<String> ad = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
@@ -44,9 +45,7 @@ public class ViewActivity extends AppCompatActivity {
         SQLiteDatabase db = dbh.getReadableDatabase();
 
         try {
-            Cursor cr = db.rawQuery(sql.toString(), null);
-
-
+            Cursor cr = db.rawQuery(sql.toString(), new String[]{"12"});
 
             while (cr.moveToNext()) {
                 //DB文字列の連結
@@ -57,7 +56,7 @@ public class ViewActivity extends AppCompatActivity {
                 text.append("/" + cr.getString(3));
                 text.append("  " + cr.getString(4)); //dayとtimeの間
                 text.append("---" + cr.getString(5)); //timeとworkの間
-                //text.append("\n");
+
                 String str = new String(text);
                 ad.add(str);
             }

@@ -8,21 +8,21 @@
 
 <LinearLayout
     android:orientation="vertical"
-    android:layout_width="fill_parent"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="16dp">
 
     <Button
-        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
         android:id="@+id/btnCreateDumy" android:text="@string/work_in"
-        android:textSize="52sp"
+        android:textSize="36sp"
         android:background="@color/colorAccent">
     </Button>
 
     <Button
-        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
         android:id="@+id/btnCreateDumy02" android:text="@string/work_out"
-        android:layout_margin="16pt">
+        android:textSize="36sp">
     </Button>
 
     <Button

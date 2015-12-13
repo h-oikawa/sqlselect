@@ -2,8 +2,8 @@
     <string name="app_name">JobJob!</string>
     <string name="action_settings_m">LIST（工事中…）</string>
     <string name="action_settings_v">HOME</string>
-    <string name="work_in">出勤！！</string>
+    <string name="work_in">＞＞出勤＜＜</string>
     <string name="toast_in">今日も1日がんばりましょう(^O^)／</string>
-    <string name="work_out">退勤！</string>
+    <string name="work_out">＜＜退勤＞＞</string>
     <string name="toast_out">1日おつかれさまでしたm(_ _)m</string>
 </resources>

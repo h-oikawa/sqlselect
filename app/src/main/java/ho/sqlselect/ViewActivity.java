@@ -19,11 +19,14 @@ public class ViewActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_view);
 
+        ListView listView = (ListView)findViewById(R.id.lv);
+
+        /*
         LinearLayout ll = new LinearLayout(this);
         ll.setOrientation(LinearLayout.HORIZONTAL);
         setContentView(ll);
-
         ListView lv = new ListView(this);
+        */
 
         //SQLの検索
         StringBuilder sql = new StringBuilder();
@@ -66,8 +69,8 @@ public class ViewActivity extends AppCompatActivity {
         }finally {
             db.close();
         }
-        lv.setAdapter(ad);
-        ll.addView(lv);
+        listView.setAdapter(ad);
+        //ll.addView(lv);
 
     }
 

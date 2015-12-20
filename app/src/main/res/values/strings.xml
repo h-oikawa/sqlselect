@@ -6,6 +6,6 @@
     <string name="toast_in">今日も1日がんばりましょう(^O^)／</string>
     <string name="work_out">＜＜退勤＞＞</string>
     <string name="toast_out">1日おつかれさまでしたm(_ _)m</string>
-    <string name="absence">欠勤</string>
+    <string name="absence">－欠勤－</string>
     <string name="toast_absence">ゆっくり休んでください</string>
 </resources>

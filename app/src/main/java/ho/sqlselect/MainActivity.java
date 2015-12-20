@@ -24,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
     /* CreateDumy02ボタンClickリスナー */
     private OnClickListener buttonCreateDumy02_OnClickListener = new OnClickListener(){
         public void onClick(View v) {buttonCreateDumy02Data_OnClick(v);}};
+    /* CreateDumy03ボタンClickリスナー */
+    private OnClickListener buttonCreateDumy03_OnClickListener = new OnClickListener(){
+        public void onClick(View v) {buttonCreateDumy03Data_OnClick(v);}};
     /* buttonRowQueryボタンClickリスナー 　*/
     private OnClickListener buttonRowQuery_OnClickListener = new OnClickListener(){
         public void onClick(View v) {buttonRowQuery_OnClick(v);}};
@@ -41,10 +44,16 @@ public class MainActivity extends AppCompatActivity {
         //
         Button btnCreateDumy = (Button)this.findViewById(R.id.btnCreateDumy);
         btnCreateDumy.setOnClickListener(buttonCreateDumy_OnClickListener);
+
         Button btnCreateDumy02 = (Button)this.findViewById(R.id.btnCreateDumy02);
         btnCreateDumy02.setOnClickListener(buttonCreateDumy02_OnClickListener);
+
+        Button btnCreateDumy03 = (Button)this.findViewById(R.id.btnCreateDumy03);
+        btnCreateDumy03.setOnClickListener(buttonCreateDumy03_OnClickListener);
+
         Button btnRowQuery = (Button)this.findViewById(R.id.buttonRowQuery);
         btnRowQuery.setOnClickListener(buttonRowQuery_OnClickListener);
+
         Button btnQuery = (Button)this.findViewById(R.id.buttonQuery);
         btnQuery.setOnClickListener(buttonQuery_OnClickListener);
     }
@@ -117,6 +126,40 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Toast.makeText(this, "1日おつかれさまでしたm(_ _)m", Toast.LENGTH_SHORT).show();
+
+    }
+    /*
+     * ダミーデータ03作成ボタン　クリック処理
+     */
+    private void buttonCreateDumy03Data_OnClick(View v){
+
+        //現在日時を取得
+        Date date = new Date();
+        //表示形式を設定
+        SimpleDateFormat sdf_y = new SimpleDateFormat("yyyy");
+        SimpleDateFormat sdf_m = new SimpleDateFormat("MM");
+        SimpleDateFormat sdf_d = new SimpleDateFormat("dd");
+        SimpleDateFormat sdf_t = new SimpleDateFormat("kk':'mm':'ss");
+
+        DatabaseHelper dbh = new DatabaseHelper(this);
+        SQLiteDatabase db=dbh.getWritableDatabase();
+
+        try{
+            ContentValues values = new ContentValues();
+            for (int i=0; i<1; i++){
+                values.put("Year", sdf_y.format(date));
+                values.put("Month", sdf_m.format(date));
+                values.put("Day", sdf_d.format(date));
+                values.put("Time", sdf_t.format(date));
+                values.put("Work", "欠勤" );
+                db.insert("MyTable", null, values);
+                values.clear();
+            }
+        }finally{
+            db.close();
+        }
+
+        Toast.makeText(this, "ゆっくり休んでね", Toast.LENGTH_SHORT).show();
 
     }
 

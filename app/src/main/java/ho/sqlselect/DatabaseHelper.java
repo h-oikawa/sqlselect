@@ -32,7 +32,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sql += ",Year integer";
         sql += ",Month integer";
         sql += ",Day integer";
-        sql += ",Time integer not null";
+        sql += ",Time integer";
         sql += ",Work text";
         sql += "biko text";
         sql += ",Latitude integer"; //緯度

@@ -34,6 +34,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sql += ",Day integer";
         sql += ",Time integer not null";
         sql += ",Work text";
+        sql += "biko text";
         sql += ",Latitude integer"; //緯度
         sql += ",Longitude integer"; //経度
         sql += ")";
